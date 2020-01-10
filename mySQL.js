@@ -3,14 +3,55 @@ const mysql = require("mysql2");
 const connection = mysql.createConnection({
     host: "localhost",
     user: "root",
-    database: "users",
-    password: "123456"
+    database: "items",
+    password: "201092oleg"
 });
 
-connection.query("SELECT * FROM users",
-    function(err, results, fields) {
-        console.log(err);
-        console.log(results); // собственно данные
-        console.log(fields); // мета-данные полей
+const user = ["Tom","T", 29, 0, 3];
+let tname = 'usa';
+
+function QueryInsert(name, user) {
+    const sql = `INSERT INTO ${name} VALUES(?, ?, ?, ?, ?)`;
+
+    connection.query(sql, user, function(err, results) {
+        if(err) console.log(err);
+        else console.log("Данные добавлены");
     });
-connection.end();
+
+}
+
+function QueryCreateTable(name) {
+    const sql = `CREATE TABLE ${name} (done VARCHAR (20),text VARCHAR (30), quantity INT, price INT,total INT);`;
+
+    connection.query(sql, name, function(err, results) {
+        if(err) console.log(err);
+        else console.log("TAble is created");
+    });
+
+}
+function ShowTable() {
+    let tablesInItems = [];
+    const sql = `SHOW TABLES;`;
+
+    connection.query(sql, function(err, results) {
+        if(err) console.log(err);
+        const users = results;
+        for(let i=0; i < users.length; i++){
+            for (let key in users[i]){
+                tablesInItems.push(users[i][key]);
+            }
+
+        }
+
+        console.log(tablesInItems);
+    });
+
+    console.log(''+tablesInItems);
+    return tablesInItems;
+}
+ShowTable()
+
+module.exports.QueryCreateTable = QueryCreateTable;
+module.exports.QueryInsert = QueryInsert;
+module.exports.ShowTable = ShowTable;
+

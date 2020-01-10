@@ -1,3 +1,4 @@
+
 var app = {
     // Application Constructor
     initialize: function() {
@@ -109,10 +110,23 @@ function addToTable(items) {
 }
 
 $('#btn2').on('click', function () {
+let tableName = prompt('Enter list name:');
+console.log(tableName);
+
     $.ajax({
         type: 'POST',
         url: 'http://localhost:3000/data',
-        data: JSON.stringify(items)
+        data: JSON.stringify({"tableName":tableName, "Item" : items})
+    }).done(function (msg) {
+        console.log(msg);
+
+    });
+});
+
+$('#btn3').on('click', function () {
+        $.ajax({
+        type: 'POST',
+        url: 'http://localhost:3000/tablesName'
     }).done(function (msg) {
         console.log(msg);
 

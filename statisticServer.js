@@ -1,5 +1,5 @@
 const express =require ('express');
-
+const mySQL = require('./mySQL');
 const fs = require ('fs');
 const app =express();
 
@@ -16,13 +16,57 @@ app.get('/', function (req, res) {
 
 
 });
+app.post('/tablesName', function (req, res) {
+let tablesName= mySQL.ShowTable();
+console.log(tablesName);
+    console.log('serverrrr')
+});
+
 app.post('/data', function (req, res) {
     let data = '';
+let tname = '';
 
     req.on('data', function (chunk) {
-        data += chunk.toString();
+        data += chunk;
+
         console.log('data - ' + data);
+        let body = JSON.parse(data);
+        tname = body.tableName;
+        mySQL.QueryCreateTable(tname);
+
+        console.log('tname - '+tname);
+        delete body.tableName;
+
+        /*let body = data.slice(1,-1);
+        arr = body.split(',');
+        console.log('body - ' + body);
+        console.log('arr - ' + arr);
+        console.log('arrtype2 -'+typeof arr);*/
+
+
+        /*for (let i = 0; i<arr.length; i++){
+            console.log(i+arr[i])
+        }*/
+        for (let key in body){
+
+            let bodyKey = body[key];
+            console.log('bodykey - '+bodyKey);
+            for (let i=0; i<bodyKey.length; i++){
+                //console.log(bodyKey[i]);
+                let arr =[];
+                for (let jet in bodyKey[i]){
+
+                    arr.push(bodyKey[i][jet])
+                }
+                //console.log(arr);
+
+                mySQL.QueryInsert(tname, arr)
+            }
+        }
+
+
     });
+
         res.send(data)
 
 });
