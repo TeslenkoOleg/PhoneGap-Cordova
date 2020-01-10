@@ -16,11 +16,11 @@ app.get('/', function (req, res) {
 
 
 });
-app.post('/tablesName', function (req, res) {
+/*app.post('/tablesName', function (req, res) {
 let tablesName= mySQL.ShowTable();
 console.log(tablesName);
     console.log('serverrrr')
-});
+});*/
 
 app.post('/data', function (req, res) {
     let data = '';

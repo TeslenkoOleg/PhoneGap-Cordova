@@ -29,7 +29,7 @@ function QueryCreateTable(name) {
     });
 
 }
-function ShowTable() {
+/*function ShowTable() {
     let tablesInItems = [];
     const sql = `SHOW TABLES;`;
 
@@ -39,19 +39,20 @@ function ShowTable() {
         for(let i=0; i < users.length; i++){
             for (let key in users[i]){
                 tablesInItems.push(users[i][key]);
+
             }
-
+            console.log('1'+tablesInItems);
         }
+        console.log('2'+tablesInItems);
 
-        console.log(tablesInItems);
     });
 
-    console.log(''+tablesInItems);
-    return tablesInItems;
+    console.log('3'+tablesInItems);
+
 }
-ShowTable()
+ShowTable()*/
 
 module.exports.QueryCreateTable = QueryCreateTable;
 module.exports.QueryInsert = QueryInsert;
-module.exports.ShowTable = ShowTable;
+/*module.exports.ShowTable = ShowTable;*/
 
