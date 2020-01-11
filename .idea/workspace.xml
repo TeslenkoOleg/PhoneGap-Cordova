@@ -4,7 +4,6 @@
     <list default="true" id="26a4055c-dbe7-4d74-adfd-cfa9c7cbe401" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/mySQL.js" beforeDir="false" afterPath="$PROJECT_DIR$/mySQL.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/statisticServer.js" beforeDir="false" afterPath="$PROJECT_DIR$/statisticServer.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -98,7 +97,7 @@
       <workItem from="1578164279106" duration="21510000" />
       <workItem from="1578483730742" duration="620000" />
       <workItem from="1578488122152" duration="19915000" />
-      <workItem from="1578646685147" duration="258000" />
+      <workItem from="1578646685147" duration="3591000" />
     </task>
     <task id="LOCAL-00001" summary="Update 10/01">
       <created>1578640566695</created>
@@ -107,7 +106,14 @@
       <option name="project" value="LOCAL" />
       <updated>1578640566695</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Update 10/01">
+      <created>1578647156216</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1578647156217</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -118,10 +124,10 @@
     <option name="LAST_COMMIT_MESSAGE" value="Update 10/01" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="393" y="6" key="CommitChangelistDialog2" timestamp="1578640561999">
+    <state x="393" y="6" key="CommitChangelistDialog2" timestamp="1578647154306">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="393" y="6" key="CommitChangelistDialog2/0.0.1536.824@0.0.1536.824" timestamp="1578640561999" />
+    <state x="393" y="6" key="CommitChangelistDialog2/0.0.1536.824@0.0.1536.824" timestamp="1578647154306" />
     <state x="549" y="167" key="FileChooserDialogImpl" timestamp="1578555367565">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
