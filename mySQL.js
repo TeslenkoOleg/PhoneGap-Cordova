@@ -7,8 +7,6 @@ const connection = mysql.createConnection({
     password: "201092oleg"
 });
 
-const user = ["Tom","T", 29, 0, 3];
-let tname = 'usa';
 
 function QueryInsert(name, user) {
     const sql = `INSERT INTO ${name} VALUES(?, ?, ?, ?, ?)`;
