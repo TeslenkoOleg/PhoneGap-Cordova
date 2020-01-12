@@ -114,7 +114,7 @@ let tableName = prompt('Enter list name:');
 
     $.ajax({
         type: 'POST',
-        url: 'http://localhost:3000/data',
+        url: 'http://176.114.15.188:3000/data',
         data: JSON.stringify({"tableName":tableName, "Item" : items})
     }).done(function (msg) {
         console.log(msg);
@@ -125,7 +125,7 @@ let tableName = prompt('Enter list name:');
 $('#btn3').on('click', function () {
         $.ajax({
         type: 'POST',
-        url: 'http://localhost:3000/tablesName'
+        url: 'http://176.114.15.188:3000/tablesName'
     }).done(function (msg) {
         console.log(msg);
         for (let i=0; i<msg.length; i++){

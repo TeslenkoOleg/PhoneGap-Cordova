@@ -3,9 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="26a4055c-dbe7-4d74-adfd-cfa9c7cbe401" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mySQL.js" beforeDir="false" afterPath="$PROJECT_DIR$/mySQL.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/statisticServer.js" beforeDir="false" afterPath="$PROJECT_DIR$/statisticServer.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/www/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/www/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/www/js/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/www/js/index.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -151,7 +148,14 @@
       <option name="project" value="LOCAL" />
       <updated>1578775375807</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="Update 10/01">
+      <created>1578861352391</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1578861352391</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -162,10 +166,10 @@
     <option name="LAST_COMMIT_MESSAGE" value="Update 10/01" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="393" y="6" key="CommitChangelistDialog2" timestamp="1578775374616">
+    <state x="393" y="6" key="CommitChangelistDialog2" timestamp="1578861349284">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="393" y="6" key="CommitChangelistDialog2/0.0.1536.824@0.0.1536.824" timestamp="1578775374616" />
+    <state x="393" y="6" key="CommitChangelistDialog2/0.0.1536.824@0.0.1536.824" timestamp="1578861349284" />
     <state x="549" y="167" key="FileChooserDialogImpl" timestamp="1578555367565">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
