@@ -111,7 +111,6 @@ function addToTable(items) {
 
 $('#btn2').on('click', function () {
 let tableName = prompt('Enter list name:');
-console.log(tableName);
 
     $.ajax({
         type: 'POST',
@@ -129,6 +128,9 @@ $('#btn3').on('click', function () {
         url: 'http://localhost:3000/tablesName'
     }).done(function (msg) {
         console.log(msg);
+        for (let i=0; i<msg.length; i++){
+            document.getElementById('listOfTables').innerHTML += `<a href="#">${msg[i]}</a>`+'<br>'
+        }
 
     });
 });

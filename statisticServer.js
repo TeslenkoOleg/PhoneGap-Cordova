@@ -16,11 +16,23 @@ app.get('/', function (req, res) {
 
 
 });
-/*app.post('/tablesName', function (req, res) {
-let tablesName= mySQL.ShowTable();
-console.log(tablesName);
-    console.log('serverrrr')
-});*/
+app.post('/tablesName', function (req, res) {
+    let tablesInItems =[];
+    const sql = `SHOW TABLES;`;
+mySQL.connection.query(sql, function(err, results) {
+    console.log(results);
+    if(err) console.log(err);
+
+    for(let i=0; i < results.length; i++){
+        for (let key in results[i]){
+            tablesInItems.push(results[i][key]);
+        }
+    }
+    res.send(tablesInItems);
+    console.log(tablesInItems);
+
+});
+});
 
 app.post('/data', function (req, res) {
     let data = '';

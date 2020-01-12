@@ -7,8 +7,13 @@ const connection = mysql.createConnection({
     password: "201092oleg"
 });
 
-
+connection.connect((err)=>{
+    if (!err){
+        console.log('DB is connected successful!')
+    }
+});
 function QueryInsert(name, user) {
+
     const sql = `INSERT INTO ${name} VALUES(?, ?, ?, ?, ?)`;
 
     connection.query(sql, user, function(err, results) {
@@ -31,26 +36,27 @@ function QueryCreateTable(name) {
     let tablesInItems = [];
     const sql = `SHOW TABLES;`;
 
-    connection.query(sql, function(err, results) {
+    tablesInItems = connection.query(sql, function(err, results) {
         if(err) console.log(err);
-        const users = results;
-        for(let i=0; i < users.length; i++){
+        return results;
+
+        //console.log(tablesInItems)
+        /!*for(let i=0; i < users.length; i++){
             for (let key in users[i]){
                 tablesInItems.push(users[i][key]);
 
             }
             console.log('1'+tablesInItems);
         }
-        console.log('2'+tablesInItems);
+        console.log('2'+tablesInItems);*!/
 
     });
-
-    console.log('3'+tablesInItems);
-
+console.log(tablesInItems)
 }
-ShowTable()*/
+ShowTable();*/
 
 module.exports.QueryCreateTable = QueryCreateTable;
 module.exports.QueryInsert = QueryInsert;
+module.exports.connection = connection;
 /*module.exports.ShowTable = ShowTable;*/
 
