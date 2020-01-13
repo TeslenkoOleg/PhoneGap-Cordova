@@ -32,31 +32,9 @@ function QueryCreateTable(name) {
     });
 
 }
-/*function ShowTable() {
-    let tablesInItems = [];
-    const sql = `SHOW TABLES;`;
-
-    tablesInItems = connection.query(sql, function(err, results) {
-        if(err) console.log(err);
-        return results;
-
-        //console.log(tablesInItems)
-        /!*for(let i=0; i < users.length; i++){
-            for (let key in users[i]){
-                tablesInItems.push(users[i][key]);
-
-            }
-            console.log('1'+tablesInItems);
-        }
-        console.log('2'+tablesInItems);*!/
-
-    });
-console.log(tablesInItems)
-}
-ShowTable();*/
 
 module.exports.QueryCreateTable = QueryCreateTable;
 module.exports.QueryInsert = QueryInsert;
 module.exports.connection = connection;
-/*module.exports.ShowTable = ShowTable;*/
+
 

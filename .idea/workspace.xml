@@ -2,7 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="26a4055c-dbe7-4d74-adfd-cfa9c7cbe401" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/www/ShowSavedList.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/www/js/listOfTables.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/www/listOfTables.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/statisticServer.js" beforeDir="false" afterPath="$PROJECT_DIR$/statisticServer.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/www/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/www/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/www/js/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/www/js/index.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -27,7 +32,9 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="ProjectId" id="1VK6mrVDCdLt8LlKuiwCbhtBRiD" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showExcludedFiles" value="true" />
@@ -38,20 +45,21 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="javascript.nodejs.core.library.configured.version" value="12.13.1" />
-    <property name="last_opened_file_path" value="$USER_HOME$/PhpstormProjects/decenterad" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/www" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="restartRequiresConfirmation" value="false" />
     <property name="settings.editor.selected.configurable" value="settings.nodejs" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\MyApp" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\MyApp\www" />
       <recent name="C:\MyApp" />
       <recent name="C:\MyApp\www\css" />
       <recent name="C:\MyApp\www\js" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\MyApp\www" />
+      <recent name="C:\MyApp" />
     </key>
   </component>
   <component name="RunManager" selected="Node.js.mySQL.js">
@@ -155,7 +163,14 @@
       <option name="project" value="LOCAL" />
       <updated>1578861352391</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="Update 10/01">
+      <created>1578862201676</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1578862201676</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -166,10 +181,10 @@
     <option name="LAST_COMMIT_MESSAGE" value="Update 10/01" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="393" y="6" key="CommitChangelistDialog2" timestamp="1578861349284">
+    <state x="393" y="6" key="CommitChangelistDialog2" timestamp="1578862200299">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="393" y="6" key="CommitChangelistDialog2/0.0.1536.824@0.0.1536.824" timestamp="1578861349284" />
+    <state x="393" y="6" key="CommitChangelistDialog2/0.0.1536.824@0.0.1536.824" timestamp="1578862200298" />
     <state x="549" y="167" key="FileChooserDialogImpl" timestamp="1578555367565">
       <screen x="0" y="0" width="1536" height="824" />
     </state>

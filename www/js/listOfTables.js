@@ -1,70 +1,62 @@
+let result =0;
+document.getElementById('result').innerText = result;
+function listOfTables() {
 
-var app = {
-    // Application Constructor
-    initialize: function() {
-        document.addEventListener('deviceready', this.onDeviceReady.bind(this), false);
-    },
+    $.ajax({
+        type: 'POST',
+        url: 'http://176.114.15.188:3000/tablesName'
+    }).done(function (msg) {
+        console.log(msg);
+        for (let i = 0; i < msg.length; i++) {
+            let name =msg[i];
+            document.getElementById('list').innerHTML += `<a href="#" onclick="SendGet('${name}')">${i}.${name}</a>` + '<br>'
+        }
 
-    // deviceready Event Handler
-    //
-    // Bind any cordova events here. Common events are:
-    // 'pause', 'resume', etc.
-    onDeviceReady: function() {
-        this.receivedEvent('deviceready');
-    },
-
-    // Update DOM on a Received Event
-    receivedEvent: function(id) {
-    }
-};
-
-app.initialize();
-
-let text ='';
-let price = null;
-let quantity = null;
-let total = null;
-let done = true;
-let table = document.getElementById('table');
-let sum = null;
-let items = [];
-let result = 0;
-
-function addItem() {
-    text = document.getElementById('text').value;
-    price = document.getElementById('price').value;
-    quantity = document.getElementById('quantity').value;
-
-    if (quantity === '') {
-        quantity = 1;
-    }
-    if (price === '') {
-        price = 0;
-    }
-    total = 0;
-    items.push({done: false,
-        text: text,
-        quantity: quantity,
-        price: price,
-        total: total
     });
-    console.log(items);
-    addToTable(items);
-    document.getElementById('result').innerText = result;
-    document.getElementById('text').value= '';
-    document.getElementById('price').value ='';
-    document.getElementById('quantity').value = '';
 }
-function showSum () {
-    let sum = 0;
-    for (let i = 0; i < items.length; i++) {
-            sum += items[i].total;
-    }
-    return sum;
+
+function SendGet(name) {
+    let tableName = name;
+
+    document.getElementById('list').innerHTML = '';
+    document.getElementById('tableName').innerHTML = 'Название таблицы - '+tableName;
+    $.get(`/params?name=${name}`, function (data) {
+        $('#tbodyid').html('');
+        let d ='';
+         d = JSON.parse(data);
+        console.log('data'+data);
+        console.log('datatyoe'+ typeof data);
+        console.log('dType'+ typeof d);
+        let ar =[];
+        for (let i =0; i<d.length; i++){
+            ar.push(d[i]);
+            console.log(ar);
+            addToTable(ar)
+
+
+        }
+
+        /*for (let key in data){
+
+            let bodyKey = body[key];
+            console.log('bodykey - '+bodyKey);
+            for (let i=0; i<bodyKey.length; i++){
+                //console.log(bodyKey[i]);
+                let arr =[];
+                for (let jet in bodyKey[i]){
+
+                    arr.push(bodyKey[i][jet])
+                }*/
+    })
+
 }
 
 function addToTable(items) {
+
+//$('#tbodyid').html('');
+    //document.getElementById('table').getElementsByTagName("tbody")[0];
     let tbody = document.getElementById('table').getElementsByTagName("tbody")[0];
+
 
     let allRows = document.getElementById('table').getElementsByTagName("tbody")[0].getElementsByTagName("tr");
     for (let i = items.length-1; i < items.length; i++) {
@@ -74,11 +66,13 @@ function addToTable(items) {
             let val = items[i][item];
             let td = document.createElement("td");
             let input = td.appendChild(document.createElement("input"));
-            if (items[i][item] === true || items[i][item] === false) {
+            if (items[i][item] === 'true' || items[i][item] === 'false') {
                 input.type='checkbox';
             }
             input.value = val;
             input.style.width = '80%';
+            result = showSum(items);
+            document.getElementById('result').innerText = result;
             input.addEventListener("change", function () {
 
                 items[i][item] = input.value;
@@ -86,17 +80,18 @@ function addToTable(items) {
                 //arrTable[i+3].value = items[i].total;
                 let alltd = document.getElementById('table').getElementsByTagName("tbody")[0].getElementsByTagName("tr")[i].getElementsByTagName("td");
                 //console.log(row.rowIndex, i, 'input');
+
                 if (input.checked){
                     row.style.backgroundColor = 'lawngreen';
                     if (row.rowIndex === i+1){
                         //let alltd = document.getElementById('table').getElementsByTagName("tbody")[0].getElementsByTagName("tr")[i].getElementsByTagName("td");
                         alltd[4].innerHTML = items[i].total;
                     }
-                    result = showSum();
+                    result = showSum(items);
                     document.getElementById('result').innerText = result;
                 } else{
                     items[i].total = 0;
-                    result = showSum();
+                    result = showSum(items);
                     document.getElementById('result').innerText = result;
                     row.style.backgroundColor = 'white';
                     let alltd = document.getElementById('table').getElementsByTagName("tbody")[0].getElementsByTagName("tr")[i].getElementsByTagName("td");
@@ -109,23 +104,10 @@ function addToTable(items) {
     }
 }
 
-$('#btn2').on('click', function () {
-let tableName = prompt('Enter list name:');
-if (tableName !== '') {
-    $.ajax({
-        type: 'POST',
-        url: 'http://176.114.15.188:3000/data',
-        data: JSON.stringify({"tableName": tableName, "Item": items})
-    }).done(function (msg) {
-        console.log(msg);
-
-    });
-} else alert('Список не сохранен! Вы не ввели названия списка!')
-});
-
-
-
-
-
-
-
+function showSum (items) {
+    let sum = 0;
+    for (let i = 0; i < items.length; i++) {
+        sum += items[i].total;
+    }
+    return sum;
+}

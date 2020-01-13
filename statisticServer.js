@@ -16,6 +16,13 @@ app.get('/', function (req, res) {
 
 
 });
+app.get('/showSavedList', function (req, res) {
+
+    let site = fs.readFileSync('www/ShowSavedList.html', 'utf-8');
+    res.write(site);
+
+
+});
 app.post('/tablesName', function (req, res) {
     let tablesInItems =[];
     const sql = `SHOW TABLES;`;
@@ -83,3 +90,29 @@ let tname = '';
 
 });
 app.use(express.static('www'));
+
+app.get('/params', function (req, res) {
+
+    let data = '';
+    console.log(req.query);
+    data = req.query;
+    console.log('data - ' + data.name);
+    let tableName = data.name;
+    console.log('name - ' + tableName);
+    const sql = `SELECT * FROM ${tableName};`;
+    mySQL.connection.query(sql, function (err, results) {
+        /*let arr=[];*/
+        console.log('res - '+results);
+        /*for (let key in results){
+
+            console.log(results[key]);
+            arr.push(results[key])
+        }*/
+
+        if (err) console.log(err);
+        res.send(JSON.stringify(results))
+
+
+    });
+
+});
