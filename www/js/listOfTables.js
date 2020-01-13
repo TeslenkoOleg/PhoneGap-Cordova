@@ -20,7 +20,8 @@ function SendGet(name) {
 
     document.getElementById('list').innerHTML = '';
     document.getElementById('tableName').innerHTML = 'Название таблицы - '+tableName;
-    $.get(`/params?name=${name}`, function (data) {
+    $.get(`http://176.114.15.188:3000/params?name=${name}`, function (data) {
+        console.log('function');
         $('#tbodyid').html('');
         let d ='';
          d = JSON.parse(data);
