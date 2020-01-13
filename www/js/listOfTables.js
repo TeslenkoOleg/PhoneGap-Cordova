@@ -20,7 +20,11 @@ function SendGet(name) {
 
     document.getElementById('list').innerHTML = '';
     document.getElementById('tableName').innerHTML = 'Название таблицы - '+tableName;
-    $.get(`http://176.114.15.188:3000/params?name=${name}`, function (data) {
+    $.ajax({
+        type: 'POST',
+        url: 'http://176.114.15.188:3000/params',
+        data: JSON.stringify({'name':name})
+    }).done(function (data) {
         console.log('function');
         $('#tbodyid').html('');
         let d ='';
@@ -37,17 +41,6 @@ function SendGet(name) {
 
         }
 
-        /*for (let key in data){
-
-            let bodyKey = body[key];
-            console.log('bodykey - '+bodyKey);
-            for (let i=0; i<bodyKey.length; i++){
-                //console.log(bodyKey[i]);
-                let arr =[];
-                for (let jet in bodyKey[i]){
-
-                    arr.push(bodyKey[i][jet])
-                }*/
     })
 
 }
