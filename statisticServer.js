@@ -50,16 +50,6 @@ let tname = '';
         console.log('tname - '+tname);
         delete body.tableName;
 
-        /*let body = data.slice(1,-1);
-        arr = body.split(',');
-        console.log('body - ' + body);
-        console.log('arr - ' + arr);
-        console.log('arrtype2 -'+typeof arr);*/
-
-
-        /*for (let i = 0; i<arr.length; i++){
-            console.log(i+arr[i])
-        }*/
         for (let key in body){
 
             let bodyKey = body[key];
@@ -71,7 +61,7 @@ let tname = '';
 
                     arr.push(bodyKey[i][jet])
                 }
-                //console.log(arr);
+                console.log(arr);
 
                 mySQL.QueryInsert(tname, arr)
             }

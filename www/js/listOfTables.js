@@ -9,7 +9,7 @@ function listOfTables() {
         console.log(msg);
         for (let i = 0; i < msg.length; i++) {
             let name =msg[i];
-            document.getElementById('list').innerHTML += `<a href="#" onclick="SendGet('${name}')">${i}.${name}</a>` + '<br>'
+            document.getElementById('list').innerHTML += `<a href="#" onclick="SendGet('${name}')">${i+1}.${name}</a>` + '<br>'
         }
 
     });
@@ -60,7 +60,8 @@ function addToTable(items) {
             let val = items[i][item];
             let td = document.createElement("td");
             let input = td.appendChild(document.createElement("input"));
-            if (items[i][item] === 'true' || items[i][item] === 'false') {
+            if (items[i][item] === 'true' || items[i][item] === 'false' ||
+                items[i][item] === true || items[i][item] === false) {
                 input.type='checkbox';
             }
             input.value = val;
