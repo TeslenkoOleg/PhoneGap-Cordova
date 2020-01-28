@@ -1,98 +1,105 @@
 <!DOCTYPE html>
-<!--
-    Licensed to the Apache Software Foundation (ASF) under one
-    or more contributor license agreements.  See the NOTICE file
-    distributed with this work for additional information
-    regarding copyright ownership.  The ASF licenses this file
-    to you under the Apache License, Version 2.0 (the
-    "License"); you may not use this file except in compliance
-    with the License.  You may obtain a copy of the License at
-
-    http://www.apache.org/licenses/LICENSE-2.0
-
-    Unless required by applicable law or agreed to in writing,
-    software distributed under the License is distributed on an
-    "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
-     KIND, either express or implied.  See the License for the
-    specific language governing permissions and limitations
-    under the License.
--->
-<html>
+<html lang="en">
     <head>
-        <!--
-        Customize this policy to fit your own app's needs. For more guidance, see:
-            https://github.com/apache/cordova-plugin-whitelist/blob/master/README.md#content-security-policy
-        Some notes:
-            * gap: is required only on iOS (when using UIWebView) and is needed for JS->native communication
-            * https://ssl.gstatic.com is required only on Android and is needed for TalkBack to function properly
-            * Disables use of inline scripts in order to mitigate risk of XSS vulnerabilities. To change this:
-                * Enable inline JS: add 'unsafe-inline' to default-src
-        -->
+
         <!--<meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: https://ssl.gstatic.com 'unsafe-eval'; style-src 'self' 'unsafe-inline'; media-src *; img-src 'self' data: content:;">
-  -->      <meta name="format-detection" content="telephone=no">
+-->     <meta charset="UTF-8">
+        <meta name="format-detection" content="telephone=no">
         <meta name="msapplication-tap-highlight" content="no">
         <meta name="viewport" content="initial-scale=1, width=device-width, viewport-fit=cover">
-        <link rel="stylesheet" href="css/bootstrap.css">
+        <!--<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+ -->       <!--<link rel="stylesheet" href="css/index.css">-->
+
+        <title>Items</title>
         <link rel="stylesheet" href="css/index.css">
-        <meta charset="UTF-8">
-        <title>Hello</title>
+        <link rel="stylesheet" href="css/bootstrap.css">
+        <link rel="stylesheet" href="css/jquery-ui.min.css">
+
+
+        <script src="js/jquery.js"></script>
+        <script src="js/jquery-ui.min.js"></script>
+
     </head>
     <body>
-    <div class="page-header">
-        <h1> Список покупок </h1>
-    </div>
-    <div class="panel">
-        <div class="form-inline">
-            <div class="form-group">
-                <div class="col-md-8">
-                    <input id="text" type="text" placeholder = "Название"/>
-                </div>
-            </div>
-            <div class="form-group">
-                <div class="col-md-6">
-                    <input id="price" type="number"  placeholder="Цена"/>
-                </div>
-            </div>
-            <div class="form-group">
-                <div class="col-md-2">
-                    <input id="quantity" type="number" placeholder="Кол-во"/>
-                </div>
-            </div>
-            <div class="form-group">
-                <div class="col-md-offset-2 col-md-8">
-                    <button onclick="addItem()">Добавить</button>
-                </div>
-            </div>
-        </div>
-        <div class="col-md-8">
-            <table id="table" border="">
-                <thead>
-                <tr>
-                    <th>Купить</th>
-                    <th>Предмет</th>
-                    <th>Кол-во</th>
-                    <th>Цена</th>
-                    <th>Общая сумма</th>
-
-                </tr>
-                </thead>
-
-                <tfoot>
-                <tr>
-                    <td colspan="1" >ИТОГО:</td><td></td><td></td><td></td><td id="result"></td>
-                </tr>
-                </tfoot>
-                <tbody>
-
-                </tbody>
-            </table>
+    <div class="container-fluid">
+        <div class="row">
+        <div class="page-header">
+                <h1>Мои покупки</h1>
 
         </div>
-    </div>
+        </div>
+        <div class="row">
+            <div class="panel">
+                <div class="form">
+                    <div class="form-group">
+                        <div class="col-md-8">
+                            <input class="" id="text" type="text" placeholder = "Название"/>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-md-6">
+                            <input id="price" type="number"  placeholder="Цена"/>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-md-2">
+                            <input id="quantity" type="number" placeholder="Кол-во"/>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-md-offset-2 col-md-8">
+                            <button id="btn_Add" class="btn btn-large btn-success " >Добавить</button>
+                        </div>
+                    </div>
+                </div>
+                <br>
+                <div >
+                    <table id="table" >
+                        <thead>
+                        <tr>
+                            <th><img src="img/success.png" width="20" height="20"></th>
+                            <th class="">Предмет</th>
+                            <th>Кол-во</th>
+                            <th>Цена</th>
+                            <th>Общая сумма</th>
 
+                        </tr>
+                        </thead>
+
+                        <tfoot>
+                        <tr>
+                            <td colspan="4">$</td><td id="result"></td>
+                        </tr>
+
+                        </tfoot>
+                        <tbody>
+
+                        </tbody>
+                    </table>
+                    <br>
+                    <div>
+                        <button class="btn btn-success" id="btn2" >Сохранить список</button>
+                    </div>
+
+                    <br>
+                    <div>
+                        <a href="listOfTables.html">Сохраненные списки</a>
+                    </div>
+
+
+                </div>
+                <br>
+
+            </div>
+        </div>
+
+    </div>
+    <script src="js/index.js"></script>
     <script type="text/javascript" src="cordova.js"></script>
-        <script type="text/javascript" src="js/index.js"></script>
-    <!--<script src="js/jquery.js"></script>-->
-    <script src="js/bootstrap.js"></script>
-    </body>
+
+
+    <!--<script src="https://code.jquery.com/jquery-3.4.1.js" integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+ -->   </body>
 </html>

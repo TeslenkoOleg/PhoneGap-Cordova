@@ -1,11 +1,11 @@
 {
   "background_color": "#FFF",
   "display": "standalone",
-  "name": "HelloCordova",
-  "short_name": "HelloCordova",
+  "name": "Мои покупки",
+  "short_name": "Мои покупки",
   "version": "io.cordova.hellocordova",
-  "description": "A sample Apache Cordova application that responds to the deviceready event.",
-  "author": "Apache Cordova Team",
+  "description": "My first mobileApp!",
+  "author": "Teslenko Oleg",
   "icons": [],
   "start_url": "index.html"
 }
