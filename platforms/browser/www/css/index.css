@@ -44,6 +44,38 @@ th, td {
 th:first-child, td:first-child {
     text-align: left;
 }
+input[type="text"]
+{
+    font-size:18px;
+    color:white;
+    font-weight: bold;
+}
+input[type="number"]
+{
+    font-size:18px;
+    color:white;
+    font-weight: bold;
+}
+input{
+    background-color: rgba(0, 0, 0, 0.5);
+
+}
+
+#result{
+    background-color: lawngreen;
+    opacity: 0.8;
+}
+#header {
+    font-family: "Comic Sans MS";
+    font-size:40px;
+    font-weight:bold;
+    margin:0px;
+    overflow:visible;
+    padding:0px;
+    text-align:center;
+    color: greenyellow;
+
+}
 
 body {
 

@@ -187,6 +187,7 @@ var app = {
                         }
                         input.value = val;
                         input.style.width = '85%';
+                        input.style.color = 'white';
                         input.addEventListener("change", function () {
 
                             items[i][item] = input.value;
@@ -196,6 +197,7 @@ var app = {
                             //console.log(row.rowIndex, i, 'input');
                             if (input.checked) {
                                 row.style.backgroundColor = 'lawngreen';
+                                row.style.opacity = 0.6;
                                 if (row.rowIndex === i + 1) {
                                     //let alltd = document.getElementById('table').getElementsByTagName("tbody")[0].getElementsByTagName("tr")[i].getElementsByTagName("td");
                                     alltd[4].innerHTML = items[i].total;
@@ -206,7 +208,8 @@ var app = {
                                 items[i].total = 0;
                                 result = showSum();
                                 document.getElementById('result').innerText = result;
-                                row.style.backgroundColor = 'white';
+                                row.style.backgroundColor = 'black';
+                                row.style.opacity = 0.6;
                                 let alltd = document.getElementById('table').getElementsByTagName("tbody")[0].getElementsByTagName("tr")[i].getElementsByTagName("td");
                                 alltd[4].innerHTML = items[i].total;
                             }
