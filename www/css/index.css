@@ -23,6 +23,7 @@ td:first-child{
     width: 2px;
 }
 table {
+    width: 100%;
     font-family: "Lucida Sans Unicode", "Lucida Grande", Sans-Serif;
     font-size: 14px;
     border-collapse: collapse;
@@ -62,8 +63,8 @@ input{
 }
 
 #result{
-    background-color: lawngreen;
-    opacity: 0.8;
+    background-color: #bce8f1;
+
 }
 #header {
     font-family: "Comic Sans MS";
@@ -75,6 +76,9 @@ input{
     text-align:center;
     color: greenyellow;
 
+}
+.column_1{
+    width: 150px;
 }
 
 body {
